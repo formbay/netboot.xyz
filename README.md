@@ -36,28 +36,7 @@ Full documentation is at netboot.xyz:
 
 ### What Operating Systems are available?
 
-* [Alpine Linux](https://alpinelinux.org)
-* [Arch Linux](https://www.archlinux.org)
-* [CentOS](https://centos.org)
-* [Debian](https://debian.org)
-* [Devuan](https://devuan.org)
-* [Fedora](https://fedoraproject.org)
-* [Flatcar Linux](https://www.flatcar-linux.org)
-* [FreeBSD](https://freebsd.org)
-* [FreeDOS](http://www.freedos.org)
-* [Gentoo](https://gentoo.org)
-* [IPFire](https://www.ipfire.org)
-* [Mageia](http://www.mageia.org)
-* [Microsoft Windows](https://www.microsoft.com)
-* [MirOS](https://www.mirbsd.org)
-* [NixOS](https://nixos.org)
-* [OpenBSD](http://openbsd.org)
-* [OpenSUSE](http://opensuse.org)
-* [RancherOS](http://rancher.com/rancher-os/)
-* [Red Hat Enterprise Linux](https://www.redhat.com/)
-* [Scientific Linux](http://scientificlinux.org)
-* [Tiny Core Linux](http://tinycorelinux.net)
-* [Ubuntu](http://www.ubuntu.com/)
+in progress ...
 
 #### Security Related
 
