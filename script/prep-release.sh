@@ -31,13 +31,6 @@ mv bin/ipxe.usb ../../build/ipxe/netboot.xyz.usb
 mv bin/ipxe.kpxe ../../build/ipxe/netboot.xyz.kpxe
 mv bin/undionly.kpxe ../../build/ipxe/netboot.xyz-undionly.kpxe
 
-# generate netboot.xyz iPXE disk for Google Compute Engine
-make bin/ipxe.usb CONFIG=cloud EMBED=../../ipxe/disks/netboot.xyz-gce \
-TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
-cp -f bin/ipxe.usb disk.raw
-tar Sczvf netboot.xyz-gce.tar.gz disk.raw
-mv netboot.xyz-gce.tar.gz ../../build/ipxe/netboot.xyz-gce.tar.gz
-
 # generate netboot.xyz-packet iPXE disk
 make bin/undionly.kpxe \
 EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt
@@ -68,22 +61,6 @@ make CROSS_COMPILE=aarch64-linux-gnu- ARCH=arm64 \
 EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt \
 bin-arm64-efi/snp.efi
 mv bin-arm64-efi/snp.efi ../../build/ipxe/netboot.xyz-arm64.efi
-
-# generate netboot.xyz-packet-arm64 iPXE disk
-make clean
-make CROSS_COMPILE=aarch64-linux-gnu- ARCH=arm64 \
-EMBED=../../ipxe/disks/netboot.xyz-packet TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt \
-bin-arm64-efi/snp.efi
-mv bin-arm64-efi/snp.efi ../../build/ipxe/netboot.xyz-packet-arm64.efi
-
-# generate arm64 experimental
-cp config/local/nap.h.efi config/local/nap.h
-cp config/local/usb.h.efi config/local/usb.h
-make clean
-make CROSS_COMPILE=aarch64-linux-gnu- ARCH=arm64 \
-EMBED=../../ipxe/disks/netboot.xyz TRUST=ca-ipxe-org.crt,ca-netboot-xyz.crt \
-bin-arm64-efi/snp.efi
-mv bin-arm64-efi/snp.efi ../../build/ipxe/netboot.xyz-arm64-experimental.efi
 
 # return to root
 cd ../..
